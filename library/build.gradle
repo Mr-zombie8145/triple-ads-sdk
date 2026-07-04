@@ -4,13 +4,17 @@ plugins {
 
 android {
     namespace 'com.solodroid.ads.sdk'
-    compileSdk 33
+    compileSdk 36
     defaultConfig {
         minSdkVersion 21
-        targetSdk 33
+        targetSdk 36
         versionCode 1
         versionName "1.0.0"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 
     buildTypes {
@@ -37,7 +41,7 @@ dependencies {
     //Primary Ad Networks
     implementation 'com.google.android.gms:play-services-ads:22.6.0'
     implementation 'com.applovin:applovin-sdk:12.1.0'
-    implementation 'com.facebook.android:audience-network-sdk:6.16.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.21.0'
 
     //AdMob mediation
     implementation 'com.google.ads.mediation:applovin:12.1.0.0'

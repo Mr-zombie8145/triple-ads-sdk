@@ -4,14 +4,19 @@ plugins {
 
 android {
     namespace 'com.solodroid.ads.sdkdemo'
-    compileSdk 33
+    compileSdk 36
     defaultConfig {
         applicationId "com.solodroid.ads.sdkdemo"
         minSdk 21
-        targetSdk 33
+        //noinspection OldTargetApi
+        targetSdk 36
         versionCode 1
         versionName "1.0.0"
         multiDexEnabled true
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 
     buildTypes {
