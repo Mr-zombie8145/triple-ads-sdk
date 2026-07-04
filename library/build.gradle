@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.library'
+    id 'maven-publish'
 }
 
 android {
@@ -17,6 +18,12 @@ android {
         buildConfig true
     }
 
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -29,6 +36,16 @@ android {
     }
     lintOptions {
         disable 'GradleDependency'
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+            }
+        }
     }
 }
 
